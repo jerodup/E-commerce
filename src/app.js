@@ -3,7 +3,6 @@ import morgan from "morgan";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import authRoutes from "./routes/auth.routes.js";
-import eventsRoutes from "./routes/events.routes.js";
 
 const app = express();
 
@@ -26,7 +25,6 @@ app.get("/", (req, res) => {
 
 // Routes
 app.use("/api/auth", authRoutes);
-app.use("/api/events", eventsRoutes);
 
 // Middleware de errores
 app.use((err, req, res, next) => {
