@@ -44,6 +44,17 @@ export default function Header() {
                     Dashboard
                   </Link>
                 </li>
+                {user.is_admin && (
+                  <li>
+                    <Link 
+                      to="/admin" 
+                      onClick={() => setIsOpen(false)}
+                      className="bg-emerald-600 hover:bg-emerald-700 px-3 py-1 rounded text-sm"
+                    >
+                      Admin
+                    </Link>
+                  </li>
+                )}
                 <li className="text-emerald-400">
                   Hola, {user.username}
                 </li>

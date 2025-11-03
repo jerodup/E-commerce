@@ -122,6 +122,7 @@ export const signIn = async (req, res) => {
         id: user.rows[0].id,
         username: user.rows[0].username,
         email: user.rows[0].email,
+        is_admin: user.rows[0].is_admin,
       },
       message: "Inicio de sesión exitoso." 
     });
@@ -167,7 +168,7 @@ export const refreshToken = async (req, res) => {
 
     // Buscar usuario (corregido: usar username en lugar de name)
     const result = await pool.query(
-      "SELECT id, email, username FROM users WHERE id = $1",
+      "SELECT id, email, username, is_admin FROM users WHERE id = $1",
       [decoded.userId]
     );
 
@@ -190,6 +191,7 @@ export const refreshToken = async (req, res) => {
         id: user.id,
         email: user.email,
         username: user.username,
+        is_admin: user.is_admin,
       },
     });
 

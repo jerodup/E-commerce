@@ -3,8 +3,9 @@ import SignUp from "./pages/SignUp"
 import Login from "./pages/Login"
 import Dashboard from "./pages/Dashboard"
 import Home from "./pages/Home"
+import AdminDashboard from "./pages/AdminDashboard"
 import Header from "./components/Header"
-import { ProtectedRoute, PublicRoute } from "./components/ProtectedRoute"
+import { ProtectedRoute, PublicRoute, AdminRoute } from "./components/ProtectedRoute"
 import ForgotPassword from "./pages/ForgotPassword"
 import ResetPassword from "./pages/ResetPassword"
 
@@ -31,6 +32,11 @@ function App() {
         <ProtectedRoute>
           <Dashboard />
         </ProtectedRoute>
+      } />
+      <Route path="/admin" element={
+        <AdminRoute>
+          <AdminDashboard />
+        </AdminRoute>
       } />
       <Route path="/forgot-password" element={<PublicRoute><ForgotPassword /></PublicRoute>} />
       <Route path="/reset-password" element={<PublicRoute><ResetPassword /></PublicRoute>} />
