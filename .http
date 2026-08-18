@@ -24,3 +24,13 @@ Content-Type: application/json
   "email": "jerodup18@gmail.com",
   "password": "newpassword123"
 }
+
+###
+POST http://localhost:3000/api/auth/setup-Admin
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "adminpassword",
+  "email": "jeroodup@gmail.com"
+}
